@@ -1,0 +1,10 @@
+server:
+  port: 7070
+
+spring:
+  application.name: resource-service-second
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:4040/auth/user

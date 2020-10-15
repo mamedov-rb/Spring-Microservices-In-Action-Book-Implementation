@@ -1,0 +1,37 @@
+server:
+  port: 8762
+
+spring:
+  application.name: zuul-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: routes
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:4040/auth/user
+
+
+zuul:
+  #  prefix: /api
+  sensitiveHeaders: Cookie,Set-Cookie
+
+#  routes:
+#    resource-service:
+#      path: /resource-service/**
+#      serviceId: resource-service
+#    auth-service:
+#      path: /auth-service/**
+#      serviceId: auth-service
+
+#ribbon:
+#  eureka:
+#    enabled: false
+
+#resource-service:
+#  ribbon:
+#    listOfServers: http://localhost:8001, http://localhost:8002, http://localhost:8003, http://localhost:8004
